@@ -1,5 +1,7 @@
 # gallery
 
+This is an online application that is used to share personal gallery images to users who would like to view your gallery
+
 ## Specifications
 To be able to access the application the user should install the latest version of goole chrome, mozilla firefox or explore and load the live link provided.
 from this point the user can access an online page with the specified gallery, and can be able to:
@@ -33,10 +35,9 @@ bkn.ngeno@gmail.com.
 
 
 ## License
-This project is licensed under the MIT License -
 MIT License
 
-Copyright (c) 2018 BrianNgeno
+/* Copyright (c) 2018 BrianNg'eno
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -55,10 +56,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
 Copyright (c) 2018 **Ngeno**
-
+*/
 
 ## Acknowledgments
 
