@@ -15,7 +15,7 @@ def image_today(request):
     html = f'''
         <html>
             <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
+                <h1> Image for {day}{date.day}-{date.month}-{date.year}</h1>
             </body>
         </html>
             '''
