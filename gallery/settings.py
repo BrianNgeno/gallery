@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'galla',
+    'bootstrap3',
     'galla.apps.GallaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
