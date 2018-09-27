@@ -8,6 +8,10 @@ def welcome(request):
 
 def image_today(request):
     date = dt.date.today()
+    '''
+    function to convert date object to find the exact day
+    '''
+    day= convert_dates(date)
     html = f'''
         <html>
             <body>
