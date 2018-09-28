@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Create your models here.
 class Editor(models.Model):
@@ -17,10 +18,19 @@ class Categorys(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Location(models.Model):
+    name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name
+
 class Image(models.Model):
-    Name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20)
     description = models.TextField()
-    # Location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location)
     Category = models.ManyToManyField(Categorys)
-    pud_date = models.DateTimeField(auto_now_add=True)
-    
+    pub_date = models.DateTimeField(auto_now_add=True, null=True)
+
