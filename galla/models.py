@@ -17,7 +17,10 @@ class Categorys(models.Model):
 
     def __str__(self):
         return self.name
-class Gallery(models.Model):
-    title = models.CharField(max_length=20)
-    post = models.TextField()
-    editor = models.ForeignKey(Editor)
+class Image(models.Model):
+    Name = models.CharField(max_length=20)
+    description = models.TextField()
+    # Location = models.ForeignKey(Location)
+    Category = models.ManyToManyField(Categorys)
+    pud_date = models.DateTimeField(auto_now_add=True)
+    
