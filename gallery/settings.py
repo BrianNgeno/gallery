@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -124,6 +124,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+# defining your database
 DATABASES={
     'default':{
         'ENGINE': 'django.db.backend.postgresql',
@@ -132,3 +133,4 @@ DATABASES={
         'PASSWORD':'123',
     }
 }
+
