@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Editor,Categorys,Image,Location 
+import datetime as dt
 # Create your tests here.
 
 class EditorTestClass(TestCase):
@@ -11,3 +12,11 @@ class EditorTestClass(TestCase):
     # Testing  instance
     def test_instance(self):
         self.assertTrue(isinstance(self.brian,Editor))
+    # Testing Save Method
+    '''
+    test save editor
+    '''
+    def test_save_method(self):
+        self.brian.save_editor()
+        editors = Editor.objects.all()
+        self.assertTrue(len(editors)>0)
