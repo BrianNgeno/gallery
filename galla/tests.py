@@ -20,3 +20,13 @@ class EditorTestClass(TestCase):
         self.brian.save_editor()
         editors = Editor.objects.all()
         self.assertTrue(len(editors)>0)
+
+    '''
+    test delete editor
+    '''
+
+    def test_delete_method(self):
+        self.brian.save_editor()
+        self.brian.delete_editor()
+        editors = Editor.objects.all()
+        self.assertTrue(len(editors)==0)
