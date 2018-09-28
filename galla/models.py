@@ -18,7 +18,7 @@ class Editor(models.Model):
 
     def delete_editor(self):
         self.delete()
-        
+
 class Categorys(models.Model):
     name = models.CharField(max_length =30)
 
@@ -40,3 +40,15 @@ class Image(models.Model):
     category = models.ManyToManyField(Categorys, default = True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True)
     Image_image = models.ImageField(upload_to = 'images/')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
