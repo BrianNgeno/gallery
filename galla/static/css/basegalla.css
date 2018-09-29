@@ -1,3 +1,25 @@
 h1{
   color: green !important;
 }
+body{
+    background-color: rgba(0, 0, 0, 0.849 )!important;
+    background-image: url(../images/background.jpeg);
+    background-attachment: fixed;
+    backface-visibility: unset;
+}
+.modal{
+    background-color: rgba(0, 0, 0, 0.932);
+    opacity:0.9;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.navbar{
+    background-color: rgba(2, 2, 2, 0.918);
+    position:sticky;
+    font-family: 'Kaushan Script', cursive;
+}
+.card{
+    opacity:0.9;
+    background-color: rgba(2, 2, 2, 0.918);
+    font-family: 'Kaushan Script', cursive;
+}

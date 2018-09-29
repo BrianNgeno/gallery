@@ -15,10 +15,13 @@
 
   {% if images %}
     {% for image in images %}
+
       <div class="col-sm-6 col-md-3">
+          <div class = "card">
           <h1>{{image.name}}</h1>
-          <img src="{{image.Image_image.url}}">
+          <img src="{{image.Image_image.url}}" class="image-responsive" style="height:300px;width:380px">
       </div>
+    </div>
     {% endfor %}
   {% endif %}
   </div>

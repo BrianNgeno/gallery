@@ -41,7 +41,7 @@ def past_days_images(request, past_date):
 def image_today(request):
     date = dt.date.today()
     galla = Image.todays_images()
-    return render(request,'all-images/today-images.html',{"date": date,"galla":galla})
+    return render(request,'all-images/gallery-images.html',{"date": date,"galla":galla})
 
 def search_results(request):
     if 'image' in request.GET and request.GET["image"]:
