@@ -1,6 +1,4 @@
-h1{
-  color: green !important;
-}
+
 body{
     background-color: rgba(0, 0, 0, 0.849 )!important;
     background-image: url(../images/background.jpeg);
@@ -17,9 +15,29 @@ body{
     background-color: rgba(2, 2, 2, 0.918);
     position:sticky;
     font-family: 'Kaushan Script', cursive;
+    position: relative;
+    list-style: none;
 }
 .card{
-    opacity:0.9;
+    /* opacity:0.9; */
     background-color: rgba(2, 2, 2, 0.918);
     font-family: 'Kaushan Script', cursive;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#search{
+    background-color: rgba(2, 2, 2, 0.918);
+    font-family: 'Kaushan Script', cursive;
+    color:white;
+}
+.jumbotron{
+    opacity: 0.9;
+    background-color: rgba(2, 2, 2, 0.918)!important;
+    background-image: url(../images/heading.jpeg)!important;
+    font-family: 'Cabin Sketch', cursive;
+    background-attachment: fixed;
+    color:white;
+    background-size: 1300px 350px;
+    background-repeat: no-repeat;
 }

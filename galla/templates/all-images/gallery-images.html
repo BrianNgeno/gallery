@@ -7,40 +7,45 @@ crossorigin="anonymous"> -->
 crossorigin="anonymous"></script> -->
 
 <div class="container">
-    <div class="row">
-        {% for item in galla %}
-        
-        <div class="col-md-4">
-            <div class="card">
-                <!-- Looping through -->
-                <img src="{{item.Image_image.url}}" data-toggle = "modal" data-target = "#myModal{{item.id}}"style="height:300px;width:380px">
-                  
-            </div>
-           
-        </div>
-        <div class="modal" tabindex="-1" id="myModal{{item.id}}"role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="text-center">{{item.name}}</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                            <img src="{{item.Image_image.url}}"  class="img-responsive" alt="">
-                            <p>{{item.description}}</p>
-                    </div>
-                    <div class="modal-footer">
-                            <p>Posted {{item.pub_date|timesince}}</p>
-                            <br>
-                      <button type="button" class="btn btn-out-outline-secondary btn-sm" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        {% endfor %}
+  <div class="jumbotron">
+    <h1>Welcome to Brian's Gallery</h1>
+    <p>
+      Capture the Moment For Life & re-live it on cloud...
+    </p>
+  </div>
+  <div class="row">
+    {% for item in galla %}
+    <div class="col-md-6">
+      <div class="card">
+        <!-- Looping through -->
+        <img  src="{{item.Image_image.url}}" data-toggle="modal" data-target="#myModal{{item.id}}" data-toggle="tooltip" title="click image to view details"style="height:300px;width:520px">
+
+      </div>
+
     </div>
+    <div class="modal" tabindex="-1" id="myModal{{item.id}}" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="text-center">{{item.name}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="{{item.Image_image.url}}" class="img-responsive" alt="">
+            <p>{{item.description}}</p>
+          </div>
+          <div class="modal-footer">
+            <p>Posted {{item.pub_date|timesince}}</p>
+            <br>
+            <button class="btn btn-out-outline-secondary btn-sm" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 
 

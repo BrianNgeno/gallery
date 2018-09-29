@@ -38,17 +38,16 @@ class Image(models.Model):
         self.delete()
 
     @classmethod
-    def todays_images(cls):
-        today = dt.date.today()
-        galla = cls.objects.filter(pub_date__date = today)
-        return galla
-
-    @classmethod
-    def day_images(cls,date):
-        galla = cls.objects.filter(pub_date__date = date)
+    def gallery_images(cls):
+        galla = cls.objects.all()
         return galla
 
     @classmethod
     def search_by_category(cls,search_term):
         galla = cls.objects.filter(category__name__icontains=search_term)
+        return galla
+
+    @classmethod
+    def get_by_location(cls,search_term):
+        galla = cls.objects.filter(location_name_icontains=search_term)
         return galla

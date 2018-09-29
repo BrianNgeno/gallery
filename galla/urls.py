@@ -5,9 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     url('^$',views.image_today,name = 'imageToday'),
-    url(r'^archives/(\d{4}-\d{2}-\d{2})/$',views.past_days_images,name = 'pastImages'),
     url(r'^search/', views.search_results, name='search_results'),
-    url(r'^images/(\d+)',views.image,name ='image'),
+    url(r'^images/(\d+)',views.Image,name ='image'),
+    url(r'^category/(\w+)',views.category_image,name='category_list')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
