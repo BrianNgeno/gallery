@@ -13,11 +13,32 @@ crossorigin="anonymous"></script> -->
         <div class="col-md-4">
             <div class="thumbnail">
                 <!-- Looping through -->
-                    <a href="/images/{{item.id}}"><img src="{{item.Image_image.url}}" style="height:300px;width:380px"></a>
+                <img src="{{item.Image_image.url}}" data-toggle = "modal" data-target = "#myModal{{item.id}}"style="height:300px;width:380px">
                   
             </div>
            
         </div>
+        <div class="modal" tabindex="-1" id="myModal{{item.id}}"role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="text-center">{{item.name}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                            <img src="{{item.Image_image.url}}"  class="img-responsive" alt="">
+                            <p>{{item.description}}</p>
+                    </div>
+                    <div class="modal-footer">
+                            <p>Posted {{item.pub_date|timesince}}</p>
+                            <br>
+                      <button type="button" class="btn btn-out-outline-secondary btn-sm" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         {% endfor %}
     </div>
 </div>
