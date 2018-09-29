@@ -1,14 +1,10 @@
 from django.shortcuts import render,redirect
 import datetime as dt
 from django.http  import HttpResponse,Http404
-
+from .models import Categorys,Image,Location
 # Create your views here.
 def welcome(request):
     return render(request,'welcome.html')
-
-def image_today(request):
-    date = dt.date.today()
-    return render(request, 'all-images/today-images.html', {"date": date,})
 
 def convert_dates(dates):
     '''
@@ -38,4 +34,34 @@ def past_days_images(request, past_date):
 
     if date == dt.date.today():
         return redirect(image_today)
-    return render(request,'all-images/past-images.html',{"date":date})
+
+    galla = Image.past_days_images(date)
+    return render(request, 'all-images/past-images.html',{"date": date,"galla":galla})
+
+def image_today(request):
+    date = dt.date.today()
+    galla = Image.todays_images()
+    return render(request,'all-images/today-images.html',{"date": date,"galla":galla})
+
+def search_results(request):
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_image = Image.search_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'all-images/search.html',{"message":message,"images": searched_image})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-images/search.html',{"message":message})
+
+def category_image(request,category_id):
+    category=Category.query.get(id=category_id)
+    return render(request,'category.html',locals())
+
+def image(request,image_id):
+
+    image = Image.objects.filter(id = image_id)
+    return render(request,"all-images/image.html", {"image":image})
+
+    
