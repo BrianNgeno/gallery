@@ -5,13 +5,13 @@ import datetime as dt
 
 class ImageTestCLass(TestCase):
     '''
-    setup self instance of Article
+    setup self instance of image
     '''
     def setUp(self):
         self.pic = Image(name='Music',description='music is a southing sound that moves souls')
     
     ''' 
-    test instance of article
+    test instance of image
     '''
     def test_instance(self):
        self.assertTrue(isinstance(self.pic,Image))
@@ -20,7 +20,7 @@ class ImageTestCLass(TestCase):
 #     # def tearDown(self):
     #    Article.objects.all().delete()
     '''
-    test save article
+    test save image
     '''
 
     def test_save_image(self):
@@ -29,7 +29,7 @@ class ImageTestCLass(TestCase):
         self.assertTrue(len(images)>0)
 
     '''
-    test delete article
+    test delete iamge
     '''
 
     def test_delete_image(self):
@@ -41,3 +41,4 @@ class ImageTestCLass(TestCase):
     def test_get_news_today(self):
         today_images = Image.todays_images()
         self.assertTrue(len(today_images)>0)
+
