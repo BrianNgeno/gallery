@@ -20,7 +20,7 @@ These instructions will get you a copy of the project up and running on a local 
 + Git clone 
 + Enter the Project root folder cd gallery/ install virtual environment (venv) without pip python3.6 -m venv --without-pip env 
 + Activate virtual environment source virtual/bin/activate install pip using curl
-curl https://bootstrap.pypa.io/get-pip.py | python run the application
+curl https://bootstrap.pypa.io/get-pip.py | python
 
 + Runnig the server python3.6 manage.py runserve
 
