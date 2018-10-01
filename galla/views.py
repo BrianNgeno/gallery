@@ -25,12 +25,14 @@ def image_today(request):
     return render(request,'all-images/gallery-images.html',{"galla":galla,'category':category,"location":location})
 
 def search_results(request):
+    category= Categorys.objects.all()
+    location= Location.objects.all()
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
         searched_image = Image.search_by_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all-images/search.html',{"message":message,"images": searched_image})
+        return render(request, 'all-images/search.html',{"message":message,"images": searched_image,'category':category,"location":location})
 
     else:
         message = "You haven't searched for any term"
