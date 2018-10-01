@@ -40,26 +40,29 @@ crossorigin="anonymous"></script> -->
           <div class="modal-footer">
             <p style="color:lawngreen; font-size:16px;">Posted {{item.pub_date|timesince}}</p>
             <br>
-            <button type="button" class="btn btn-outline-danger btn-bg" data-dismiss="modal" data-toggle="tooltip" data-placement="right" title="Close Single Image">Close</button>
+            <button type="button" class="btn btn-outline-danger btn-bg" data-dismiss="modal" data-toggle="tooltip"
+              data-placement="right" title="Close Single Image">Close</button>
             <br>
             <input type="text" value="https://gallabrayo.herokuapp.com{{item.Image_image.url}}" id="myInput" style="color:black;">
-            <button type="button" value="https://gallabrayo.herokuapp.com{{item.Image_image.url}}"  onclick="copyLink(this.value)"class="btn btn-outline-success" data-toggle="tooltip" data-placement="right" title="Copy Image">Copy Image url</button>
+            <button type="button" value="https://gallabrayo.herokuapp.com{{item.Image_image.url}}" onclick="copyLink(this.value)"
+              class="btn btn-outline-success" data-toggle="tooltip" data-placement="right" title="Copy Image">Copy
+              Image url</button>
           </div>
         </div>
       </div>
     </div>
- 
+
     {% endfor %}
     <script>
       function copyLink() {
-  var copyText = document.getElementById("myInput");
-  copyText.select();
-  document.execCommand("copy");
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        document.execCommand("copy");
 
-  /* Alert the copied text */
-  alert("Text Copied : " + copyText.value);
-}
-      </script>
+        /* Alert the copied text */
+        alert("Text Copied : " + copyText.value);
+      }
+    </script>
   </div>
 </div>
 
