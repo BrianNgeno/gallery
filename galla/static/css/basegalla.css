@@ -41,3 +41,8 @@ body{
     background-size: 1300px 350px;
     background-repeat: no-repeat;
 }
+.modal-content{
+    background-color: rgba(2, 2, 2, 0.918);
+    color: white;
+    font-size:16px;
+}

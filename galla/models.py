@@ -49,5 +49,5 @@ class Image(models.Model):
 
     @classmethod
     def get_by_location(cls,search_term):
-        galla = cls.objects.filter(location_name_icontains=search_term)
+        galla = cls.objects.filter(location__name__icontains=search_term)
         return galla

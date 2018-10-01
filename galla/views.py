@@ -21,7 +21,8 @@ def convert_dates(dates):
 def image_today(request):
     galla = Image.gallery_images()
     category= Categorys.objects.all()
-    return render(request,'all-images/gallery-images.html',{"galla":galla,'category':category})
+    location= Location.objects.all()
+    return render(request,'all-images/gallery-images.html',{"galla":galla,'category':category,"location":location})
 
 def search_results(request):
     if 'image' in request.GET and request.GET["image"]:
@@ -39,13 +40,17 @@ def category_imge(request,category_id):
     category=Category.query.get(id=category_id)
     return render(request,'category.html',locals())
 
-def category_image(request,location_id):
-    images=Image.objects.filter(category__name=location_id)
+def category_image(request,category_id):
+    images=Image.objects.filter(category__name=category_id)
     category= Categorys.objects.all()
-    return render(request,'all-images/gallery-images.html',{'galla':images,'category':category})
-# def image(request,image_id):
+    location= Location.objects.all()
+    return render(request,'all-images/gallery-images.html',{'galla':images,'category':category,'location':location})
 
-#     image = Image.objects.filter(id = image_id)
-#     return render(request,"all-images/image.html", {"image":image})
+def location_image(request,location_id):
+    galla = Image.objects.filter(location__name=location_id)
+    location = Location.objects.all()
+    category= Categorys.objects.all()
+
+    return render(request,"all-images/gallery-images.html", {"galla":galla,"location":location,'category':category})
 
     

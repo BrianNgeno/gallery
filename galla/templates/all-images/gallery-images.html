@@ -18,7 +18,8 @@ crossorigin="anonymous"></script> -->
     <div class="col-md-6">
       <div class="card">
         <!-- Looping through -->
-        <img  src="{{item.Image_image.url}}" data-toggle="modal" data-target="#myModal{{item.id}}" data-toggle="tooltip" title="click image to view details"style="height:300px;width:520px">
+        <img src="{{item.Image_image.url}}" data-toggle="modal" data-target="#myModal{{item.id}}" data-toggle="tooltip"
+          title="click image to view details" style="height:300px;width:520px">
 
       </div>
 
@@ -37,13 +38,28 @@ crossorigin="anonymous"></script> -->
             <p>{{item.description}}</p>
           </div>
           <div class="modal-footer">
-            <p>Posted {{item.pub_date|timesince}}</p>
+            <p style="color:lawngreen; font-size:16px;">Posted {{item.pub_date|timesince}}</p>
             <br>
-            <button class="btn btn-out-outline-secondary btn-sm" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-danger btn-bg" data-dismiss="modal" data-toggle="tooltip" data-placement="right" title="Close Single Image">Close</button>
+            <br>
+            <input type="text" value="https://localhost/{{item.Image_image.url}}" id="myInput">
+            <button type="button" value="https://gallabrian.herokuapp.com{{item.Image_image.url}}"  onclick="copyLink(this.value)"class="btn btn-outline-success" data-toggle="tooltip" data-placement="right" title="Copy Image">Copy Image</button>
           </div>
         </div>
       </div>
     </div>
+    <script>
+        function copyLink(value) {
+            console.log('sdfgsdfg')
+            function handler(event){
+                event.clipboardData.setData('text/plain', value);
+                event.preventDefault();
+                document.removeEventListener('copy', handler, true);
+            }
+            document.addEventListener('copy', handler, true);
+            document.execCommand('copy');
+        }
+        </script>
     {% endfor %}
   </div>
 </div>
