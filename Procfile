@@ -1,1 +1,1 @@
-web: gunicorn gallabrayo.wsgi
+web: gunicorn gallery.wsgi
