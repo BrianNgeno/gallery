@@ -13,7 +13,16 @@ from this point the user can access an online page with the specified gallery, a
 
 
 ## Setup/Installation Requirements
-* For a developer who wishes to view the work.You will have to clone my repository and check the requirements to be able to get all the tools needed for proper running of the applictaion and also check the version of python used from the runtime to assert you fullfill requirements to run the application. 
+* For a developer who wishes to view the work.You will have to clone my repository and check the requirements to be able to get all the tools needed for proper running of the applictaion and also check the version of python used from the runtime to assert you fullfill requirements to run the application.
+Getting Started.
+These instructions will get you a copy of the project up and running on a local host.
+
++ Git clone 
++ Enter the Project root folder cd gallery/ install virtual environment (venv) without pip python3.6 -m venv --without-pip env 
++ Activate virtual environment source virtual/bin/activate install pip using curl
+curl https://bootstrap.pypa.io/get-pip.py | python run the application
+
++ Runnig the server python3.6 manage.py runserve
 
 ## Known Bugs
 There are no unresolved issues in regards to this code that I know of.
